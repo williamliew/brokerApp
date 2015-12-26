@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Button from './components/button';
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, world.</h1>
+      <div>
+        <h1>auction haus</h1>
+        <Button title="test" />
+      </div>
     );
   }
 }
