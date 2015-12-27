@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import Overlay from './components/overlay';
 
-export default class DivTest extends Component {
-  handleClick() {
-    return (
-      <Overlay />
-    );
+export default class LocalStorage extends Component {
+
+  addToArray(value) {
+    window.LocalStorage.addStuff = localStorageString.push(value);
   }
 
   render() {
+    var localStorageString = window.localStorage.addStuff;
     return (
       <div>
-        <h2 onClick={this.handleClick}>Testing shit</h2>
+        <h2>Local storage list</h2>
       </div>
     );
   }
