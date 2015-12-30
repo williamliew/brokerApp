@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import BidActions from '../actions/bidactions';
 
-export default class Button extends Component {
+export default React.createClass ({
 
-  handleClick() {
-    alert('testing saasfas');
-  }
+  handleClick: function() {
+    BidActions.addToArray(this.props.name);
+  },
 
-  render() {
-    return(
+  render: function() {
+    return (
       <button
-      className="button"
+      className="button-primary"
       value={this.props.value}
       name={this.props.name}
       onClick={this.handleClick}>
@@ -17,4 +18,4 @@ export default class Button extends Component {
       </button>
     );
   }
-}
+});

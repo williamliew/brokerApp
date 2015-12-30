@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 
 export default class LocalStorage extends Component {
 
-  addToArray(value) {
-    window.LocalStorage.addStuff = localStorageString.push(value);
-  }
-
   render() {
-    var localStorageString = window.localStorage.addStuff;
+    var localStorageString = window.localStorage.bidderList;
     return (
       <div>
-        <h2>Local storage list</h2>
+        <h2>Bidders</h2>
+        {localStorageString}
       </div>
     );
   }

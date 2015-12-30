@@ -5,10 +5,10 @@ export default class BidWindow extends Component {
   render() {
     return(
       <div className="bid-window">
-        <h2>
+        <h3>
           {this.props.name}
-        </h2>
-        <Button text="Bid"/>
+        </h3>
+        <Button text="Bid" name={this.props.name} />
       </div>
     );
   }
