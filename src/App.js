@@ -4,10 +4,6 @@ import BidderList from './views/bidderlist';
 
 export default class App extends Component {
   render() {
-    var localStorageList = [];
-    if(window.localStorage.bidderList) {
-      localStorageList = window.localStorage.bidderList.split(",");
-    }
     return (
       <div className="container">
         <h1>auction haus</h1>
@@ -15,7 +11,7 @@ export default class App extends Component {
         <BidWindow name="Steve" />
         <BidWindow name="Marcel" />
         <BidWindow name="Anna" />
-        {window.localStorage.bidderList && <BidderList bidderlist={localStorageList} />}
+        {window.localStorage.bidderList && <BidderList />}
       </div>
     );
   }

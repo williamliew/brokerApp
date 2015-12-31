@@ -1,15 +1,25 @@
-var localStorageArray = [];
-if(window.localStorage.bidderList) {
-  Array.prototype.push.apply(localStorageArray, window.localStorage.bidderList.split(','));
+var bidderList = [];
+if(window.localStorage.storedBidderList) {
+  Array.prototype.push.apply(bidderList, window.localStorage.storedBidderList.split(','));
 }
 
 export default {
-  addToArray: function(value) {
-    localStorageArray.push(value);
-    window.localStorage.bidderList = localStorageArray.toString();
+  getInitialList: function() {
+    return {
+      bidderList: bidderList
+    };
   },
 
-  updateList: function() {
+  addToArray: function(value) {
+    bidderList.push(value);
 
+    console.log(bidderList);
+
+    window.localStorage.storedBidderList = bidderList.toString();
+
+  },
+
+  updateList: function(newBidder) {
+    return "bidderList";
   }
 };

@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import Bidder from '../components/bidder';
+import BidderList from '../actions/bidactions';
 
 export default React.createClass ({
   getInitialState: function() {
     return {
-      bidderlist: this.props.bidderlist
+      data: BidderList.getInitialList()
     };
-  },
-
-  refreshList: function(newlist) {
-    this.setState({
-      bidderlist: newlist
-    });
   },
 
   render: function() {
@@ -19,12 +14,13 @@ export default React.createClass ({
       <div>
         <h2>Bidders</h2>
         <ul>
-          {this.state.bidderlist.map(function(name, index){
+          {this.state.data.bidderList.map(function(name, index){
             return (
               <Bidder bidder={name} key={index} />
             );
           })}
         </ul>
+        <p>{console.log(this.state.data.bidderList)}</p>
       </div>
     );
   }
