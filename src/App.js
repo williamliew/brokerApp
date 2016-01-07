@@ -10,7 +10,6 @@ export default class App extends Component {
         <BidWindow name="George" />
         <BidWindow name="Steve" />
         <BidWindow name="Marcel" />
-        <BidWindow name="Anna" />
         {window.localStorage.bidderList && <BidderList />}
       </div>
     );

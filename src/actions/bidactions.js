@@ -18,8 +18,4 @@ export default {
     window.localStorage.storedBidderList = bidderList.toString();
 
   },
-
-  updateList: function(newBidder) {
-    return "bidderList";
-  }
 };
